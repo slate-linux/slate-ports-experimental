@@ -9,10 +9,10 @@ ports = {}
 current_port = ""
 for line in FILE_CONTENT:
     if not line.strip(): continue
+    if line.startswith("#") or line.startswith(";"): continue
 
     if re.match(r"\[.+\]", line): # I hate regex sometimes
         current_port = line[1:-2].strip()
-        print(current_port)
         continue
 
     options = line.split("=", 1)
