@@ -28,4 +28,4 @@ for line in FILE_CONTENT:
         ports[current_port] = { k:v }
 
     if not current_port:
-        raise ValueError("Current port not given")
+        raise SyntaxError("Current port not given")
