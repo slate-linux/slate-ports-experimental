@@ -21,11 +21,11 @@ for line in FILE_CONTENT:
     # Without spaces next to the equal sign
 
     k, v = options[0], options[1].strip()
+    
+    if not current_port:
+        raise SyntaxError("Current port not given")
 
     if ports.get(current_port):
         ports[current_port][k] = v
     else:
         ports[current_port] = { k:v }
-
-    if not current_port:
-        raise SyntaxError("Current port not given")
