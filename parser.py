@@ -1,4 +1,13 @@
 import re
+import subprocess
+
+# Functions
+def get_hash(link: str):
+    result = subprocess.run(f"curl -sL {link} | sha256sum | cut -d' ' -f1", shell=True, capture_output=True, text=True)
+    if result.returncode != 0:
+        raise ChildProcessError(f"Error while getting hash:\n{result.stderr}")
+
+    return result.stdout[:-1]
 
 # Reading file
 with open("./ports.conf", "r") as file:
