@@ -3,7 +3,12 @@ import subprocess
 
 # Functions
 def get_hash(link: str):
-    result = subprocess.run(f"curl -sL {link} | sha256sum | cut -d' ' -f1", shell=True, capture_output=True, text=True, check=True)
+    result = subprocess.run(
+        f"curl -sL {link} | sha256sum | cut -d' ' -f1",
+        shell=True,
+        capture_output=True,
+        text=True, check=True
+    )
 
     return result.stdout[:-1]
 
