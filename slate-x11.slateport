@@ -1,0 +1,833 @@
+# Generated from slate-desktop-ports/x11
+# 75 package section(s); 71 structured, 4 custom-build fallback
+
+--(PACKAGE)--
+CATEGORY=lib
+PORTNAME=atk
+VERSION=unknown
+URL=https://example.com/atk.tar.gz
+DEPENDS=dev/python dev/ninja
+MAKE=meson
+MAKEOPTS=
+PRE=__slate_root=$(pwd); meson setup build --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=lib
+PORTNAME=gdk-pixbuf
+VERSION=unknown
+URL=https://example.com/gdk-pixbuf.tar.gz
+DEPENDS=dev/python dev/ninja
+MAKE=meson
+MAKEOPTS=
+PRE=__slate_root=$(pwd); meson setup build --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=meta
+PORTNAME=dillo
+VERSION=unknown
+URL=https://example.com/dillo.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=meta
+PORTNAME=i3
+VERSION=unknown
+URL=https://example.com/i3.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=meta
+PORTNAME=pango
+VERSION=unknown
+URL=https://example.com/pango.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=meta
+PORTNAME=pcmanfm
+VERSION=unknown
+URL=https://example.com/pcmanfm.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=meta
+PORTNAME=web-deps
+VERSION=unknown
+URL=https://example.com/web-deps.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=meta
+PORTNAME=webkitgtk
+VERSION=unknown
+URL=https://example.com/webkitgtk.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=bdftopcf
+VERSION=unknown
+URL=https://example.com/bdftopcf.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=cairo
+VERSION=unknown
+URL=https://example.com/cairo.tar.gz
+DEPENDS=dev/python dev/ninja
+MAKE=meson
+MAKEOPTS=
+PRE=__slate_root=$(pwd); meson setup build --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=dejavu-fonts
+VERSION=unknown
+URL=https://example.com/dejavu-fonts.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=fltk
+VERSION=unknown
+URL=https://example.com/fltk.tar.gz
+DEPENDS=dev/dev
+MAKE=cmake
+MAKEOPTS=
+PRE=__slate_root=$(pwd); cmake -S . -B build -DCMAKE_INSTALL_PREFIX=/usr
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=font-misc-misc
+VERSION=unknown
+URL=https://example.com/font-misc-misc.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=font-util
+VERSION=unknown
+URL=https://example.com/font-util.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=fontconfig
+VERSION=unknown
+URL=https://example.com/fontconfig.tar.gz
+DEPENDS=dev/python dev/ninja
+MAKE=meson
+MAKEOPTS=
+PRE=__slate_root=$(pwd); meson setup build --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=freetype
+VERSION=unknown
+URL=https://example.com/freetype.tar.gz
+DEPENDS=dev/python dev/ninja
+MAKE=meson
+MAKEOPTS=
+PRE=__slate_root=$(pwd); meson setup build --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=gtk3
+VERSION=unknown
+URL=https://example.com/gtk3.tar.gz
+DEPENDS=dev/python dev/ninja
+MAKE=meson
+MAKEOPTS=
+PRE=__slate_root=$(pwd); meson setup build --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=harfbuzz
+VERSION=unknown
+URL=https://example.com/harfbuzz.tar.gz
+DEPENDS=dev/python dev/ninja
+MAKE=meson
+MAKEOPTS=
+PRE=__slate_root=$(pwd); meson setup build --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=intltool
+VERSION=unknown
+URL=https://example.com/intltool.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libICE
+VERSION=unknown
+URL=https://example.com/libICE.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libSM
+VERSION=unknown
+URL=https://example.com/libSM.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libX11
+VERSION=unknown
+URL=https://example.com/libX11.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libXau
+VERSION=unknown
+URL=https://example.com/libXau.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libXaw
+VERSION=unknown
+URL=https://example.com/libXaw.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libXcomposite
+VERSION=unknown
+URL=https://example.com/libXcomposite.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libXcursor
+VERSION=unknown
+URL=https://example.com/libXcursor.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libXdamage
+VERSION=unknown
+URL=https://example.com/libXdamage.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libXdmcp
+VERSION=unknown
+URL=https://example.com/libXdmcp.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libXext
+VERSION=unknown
+URL=https://example.com/libXext.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libXfixes
+VERSION=unknown
+URL=https://example.com/libXfixes.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libXfont2
+VERSION=unknown
+URL=https://example.com/libXfont2.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libXft
+VERSION=unknown
+URL=https://example.com/libXft.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libXi
+VERSION=unknown
+URL=https://example.com/libXi.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libXinerama
+VERSION=unknown
+URL=https://example.com/libXinerama.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libXmu
+VERSION=unknown
+URL=https://example.com/libXmu.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libXpm
+VERSION=unknown
+URL=https://example.com/libXpm.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libXrandr
+VERSION=unknown
+URL=https://example.com/libXrandr.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libXrender
+VERSION=unknown
+URL=https://example.com/libXrender.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libXres
+VERSION=unknown
+URL=https://example.com/libXres.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libXt
+VERSION=unknown
+URL=https://example.com/libXt.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libXxf86vm
+VERSION=unknown
+URL=https://example.com/libXxf86vm.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libdrm
+VERSION=unknown
+URL=https://example.com/libdrm.tar.gz
+DEPENDS=dev/python dev/ninja
+MAKE=meson
+MAKEOPTS=
+PRE=__slate_root=$(pwd); meson setup build --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libevdev
+VERSION=unknown
+URL=https://example.com/libevdev.tar.gz
+DEPENDS=dev/python dev/ninja
+MAKE=meson
+MAKEOPTS=
+PRE=__slate_root=$(pwd); meson setup build --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libfm
+VERSION=unknown
+URL=https://example.com/libfm.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libfm-extra
+VERSION=unknown
+URL=https://example.com/libfm-extra.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libinput
+VERSION=unknown
+URL=https://example.com/libinput.tar.gz
+DEPENDS=dev/python dev/ninja
+MAKE=meson
+MAKEOPTS=
+PRE=__slate_root=$(pwd); meson setup build --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libpciaccess
+VERSION=unknown
+URL=https://example.com/libpciaccess.tar.gz
+DEPENDS=dev/python dev/ninja
+MAKE=meson
+MAKEOPTS=
+PRE=__slate_root=$(pwd); meson setup build --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libpng
+VERSION=unknown
+URL=https://example.com/libpng.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libxcb
+VERSION=unknown
+URL=https://example.com/libxcb.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libxcvt
+VERSION=unknown
+URL=https://example.com/libxcvt.tar.gz
+DEPENDS=dev/python dev/ninja
+MAKE=meson
+MAKEOPTS=
+PRE=__slate_root=$(pwd); meson setup build --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libxkbcommon
+VERSION=unknown
+URL=https://example.com/libxkbcommon.tar.gz
+DEPENDS=dev/python dev/ninja
+MAKE=meson
+MAKEOPTS=
+PRE=__slate_root=$(pwd); meson setup build --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libxkbfile
+VERSION=unknown
+URL=https://example.com/libxkbfile.tar.gz
+DEPENDS=dev/python dev/ninja
+MAKE=meson
+MAKEOPTS=
+PRE=__slate_root=$(pwd); meson setup build --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=libxshmfence
+VERSION=unknown
+URL=https://example.com/libxshmfence.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=menu-cache
+VERSION=unknown
+URL=https://example.com/menu-cache.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=mesa
+VERSION=unknown
+URL=https://example.com/mesa.tar.gz
+DEPENDS=dev/dev lib/readline lib/libffi
+MAKE=python
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=mkfontscale
+VERSION=unknown
+URL=https://example.com/mkfontscale.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=pango
+VERSION=unknown
+URL=https://example.com/pango.tar.gz
+DEPENDS=dev/python dev/ninja
+MAKE=meson
+MAKEOPTS=
+PRE=__slate_root=$(pwd); meson setup build --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=pixman
+VERSION=unknown
+URL=https://example.com/pixman.tar.gz
+DEPENDS=dev/python dev/ninja
+MAKE=meson
+MAKEOPTS=
+PRE=__slate_root=$(pwd); meson setup build --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=seatd
+VERSION=unknown
+URL=https://example.com/seatd.tar.gz
+DEPENDS=dev/python dev/ninja
+MAKE=meson
+MAKEOPTS=
+PRE=__slate_root=$(pwd); meson setup build --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=shared-mime-info
+VERSION=unknown
+URL=https://example.com/shared-mime-info.tar.gz
+DEPENDS=dev/python dev/ninja
+MAKE=meson
+MAKEOPTS=
+PRE=__slate_root=$(pwd); meson setup build --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=startup-notification
+VERSION=unknown
+URL=https://example.com/startup-notification.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=xauth
+VERSION=unknown
+URL=https://example.com/xauth.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=xcb-proto
+VERSION=unknown
+URL=https://example.com/xcb-proto.tar.gz
+DEPENDS=dev/dev lib/readline lib/libffi
+MAKE=python
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=xcb-util
+VERSION=unknown
+URL=https://example.com/xcb-util.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=xcb-util-cursor
+VERSION=unknown
+URL=https://example.com/xcb-util-cursor.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=xcb-util-errors
+VERSION=unknown
+URL=https://example.com/xcb-util-errors.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=xcb-util-image
+VERSION=unknown
+URL=https://example.com/xcb-util-image.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=xcb-util-keysyms
+VERSION=unknown
+URL=https://example.com/xcb-util-keysyms.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=xcb-util-renderutil
+VERSION=unknown
+URL=https://example.com/xcb-util-renderutil.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=xcb-util-wm
+VERSION=unknown
+URL=https://example.com/xcb-util-wm.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=xcb-util-xrm
+VERSION=unknown
+URL=https://example.com/xcb-util-xrm.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=xinit
+VERSION=unknown
+URL=https://example.com/xinit.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=xkbcomp
+VERSION=unknown
+URL=https://example.com/xkbcomp.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=xkeyboard-config
+VERSION=unknown
+URL=https://example.com/xkeyboard-config.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=xorg-drivers
+VERSION=unknown
+URL=https://example.com/xorg-drivers.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=xorg-finalize
+VERSION=unknown
+URL=https://example.com/xorg-finalize.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=xorg-macros
+VERSION=unknown
+URL=https://example.com/xorg-macros.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=xorg-server
+VERSION=unknown
+URL=https://example.com/xorg-server.tar.gz
+DEPENDS=dev/python dev/ninja
+MAKE=meson
+MAKEOPTS=
+PRE=__slate_root=$(pwd); meson setup build --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=xorgproto
+VERSION=unknown
+URL=https://example.com/xorgproto.tar.gz
+DEPENDS=dev/python dev/ninja
+MAKE=meson
+MAKEOPTS=
+PRE=__slate_root=$(pwd); meson setup build --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=xproto
+VERSION=unknown
+URL=https://example.com/xproto.tar.gz
+DEPENDS=dev/python dev/ninja
+MAKE=meson
+MAKEOPTS=
+PRE=__slate_root=$(pwd); meson setup build --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=xrandr
+VERSION=unknown
+URL=https://example.com/xrandr.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=xtrans
+VERSION=unknown
+URL=https://example.com/xtrans.tar.gz
+DEPENDS=dev/dev
+MAKE=make
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr --disable-nls
+
+--(PACKAGE)--
+CATEGORY=x11
+PORTNAME=yajl
+VERSION=unknown
+URL=https://example.com/yajl.tar.gz
+DEPENDS=dev/dev
+MAKE=cmake
+MAKEOPTS=
+PRE=__slate_root=$(pwd); cmake -S . -B build -DCMAKE_INSTALL_PREFIX=/usr
+

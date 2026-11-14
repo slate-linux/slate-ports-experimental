@@ -1,0 +1,41 @@
+
+--(PACKAGE)--
+CATEGORY=dev
+PORTNAME=gdb
+VERSION=unknown
+URL=curl -LO https://ftp.gnu.org/gnu/gdb/gdb-18.1.tar.xz
+DEPENDS=dev/dev lib/readline lib/libffi
+MAKE=python
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=dev
+PORTNAME=meson
+VERSION=1.12.1
+URL=curl -LO https://github.com/mesonbuild/meson/archive/refs/tags/1.12.1.tar.gz
+DEPENDS=dev/dev lib/readline lib/libffi
+MAKE=python
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=dev
+PORTNAME=ninja
+VERSION=unknown
+URL=curl -LO https://github.com/ninja-build/ninja/archive/refs/tags/v1.13.2.tar.gz
+DEPENDS=dev/dev lib/readline lib/libffi
+MAKE=python
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr
+
+--(PACKAGE)--
+CATEGORY=dev
+PORTNAME=python
+VERSION=3.13.7
+URL=https://www.python.org/ftp/python/3.13.7/Python-3.13.7.tgz
+DEPENDS=dev/dev lib/readline lib/libffi
+MAKE=python
+MAKEOPTS=
+PRE=__slate_root=$(pwd); ./configure --prefix=/usr
+
