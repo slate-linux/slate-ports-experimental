@@ -1,4 +1,5 @@
 import re
+import shutil
 import pathlib
 import subprocess
 
@@ -46,6 +47,14 @@ for line in FILE_CONTENT:
 # Generation
 output=pathlib.Path("./ports/")
 output.mkdir(exist_ok=True, parents=True)
+
+option = input("==> would you like to remove the older files? (y/N)")
+if option == "y" or option == "yes":
+    shutil.rmtree(output)
+    output.mkdir(exist_ok=True, parents=True)
+    print("==> removed, moving on to the generation")
+else:
+    print("==> aborted")
 
 for name, data in ports.items():
     portdir = output / pathlib.Path(name)
