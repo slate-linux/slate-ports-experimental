@@ -53,13 +53,18 @@ for name, data in ports.items():
 
     with open(portdir / "meta.conf", "w") as file:
         content = ""
-
         if not data.get("version"):
             raise ValueError(f"Version not given for '{name}'")
 
-        content = f"VERSION={data["version"]}\n"
-        content += "DEPENDS="
+        content += f"VERSION={data["version"]}\n"
 
+        if not data.get("tarball"):
+            raise ValueError(f"Archive (tarball) not given for '{name}'")
+
+        print(f"==> generating hash for '{name}', this might take a while")
+        content += f"HASH={get_hash(data["tarball"])}\n"
+
+        content += "DEPENDS="
         if data.get("depends"):
             content += "\n    "
             content += "\n    ".join(data["depends"].split(" "))
