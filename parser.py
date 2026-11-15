@@ -1,4 +1,5 @@
 import re
+import pathlib
 import subprocess
 
 # Functions
@@ -41,3 +42,11 @@ for line in FILE_CONTENT:
         ports[current_port][k] = v
     else:
         ports[current_port] = { k:v }
+
+# Generation
+output=pathlib.Path("./ports/")
+output.mkdir(exist_ok=True)
+
+for name, data in ports:
+    portdir = output / pathlib.Path(name)
+    portdir.mkdir(exist_ok=True)
