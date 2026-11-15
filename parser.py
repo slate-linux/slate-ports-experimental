@@ -33,7 +33,7 @@ for line in FILE_CONTENT:
     # This will strictly be key=value
     # Without spaces next to the equal sign
 
-    k, v = options[0], options[1].strip()
+    k, v = options[0].lower(), options[1].strip()
     
     if not current_port:
         raise SyntaxError("Current port not given")
@@ -45,8 +45,23 @@ for line in FILE_CONTENT:
 
 # Generation
 output=pathlib.Path("./ports/")
-output.mkdir(exist_ok=True)
+output.mkdir(exist_ok=True, parents=True)
 
-for name, data in ports:
+for name, data in ports.items():
     portdir = output / pathlib.Path(name)
-    portdir.mkdir(exist_ok=True)
+    portdir.mkdir(exist_ok=True, parents=True)
+
+    with open(portdir / "meta.conf", "w") as file:
+        content = ""
+
+        if not data.get("version"):
+            raise ValueError(f"Version not given for '{name}'")
+
+        content = f"VERSION={data["version"]}\n"
+        content += "DEPENDS="
+
+        if data.get("depends"):
+            content += "\n    "
+            content += "\n    ".join(data["depends"].split(" "))
+        
+        file.write(content)
