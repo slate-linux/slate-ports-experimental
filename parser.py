@@ -3,6 +3,9 @@ import shutil
 import pathlib
 import subprocess
 
+# Constants
+HASHING = "sha256"
+
 # Templates
 HEADER = """#!/bin/sh
 set -eu
@@ -11,7 +14,7 @@ BUILD="${{PORTS_DIR%/:-/usr/ports}}/{port}/build"
 mkdir -p $BUILD
 cd $BUILD
 
-if [ ! -f package.tar.gz ] || [ ! "$HASH" = "$(sha256sum package.tar.gz | cut -d' ' -f1)" ]; then
+if [ ! -f package.tar.gz ] || [ ! "$HASH" = "$({hasing}sum package.tar.gz | cut -d' ' -f1)" ]; then
     curl -fL -o package.tar.gz {url}
 fi
 tar -xf package.tar.gz
@@ -43,7 +46,7 @@ BUILD = {
 # Functions
 def get_hash(link: str):
     result = subprocess.run(
-        f"curl -sL {link} | sha256sum | cut -d' ' -f1",
+        f"curl -sL {link} | {HASHING}sum | cut -d' ' -f1",
         shell=True,
         capture_output=True,
         text=True, check=True
@@ -123,7 +126,7 @@ for name, data in ports.items():
         file.write(content)
     
     with open(portdir / "port.sh", "w") as file:
-        content = HEADER.format(port=name, url=data["tarball"])
+        content = HEADER.format(hashing=HASHING, port=name, url=data["tarball"])
         
         if data.get("makeopts"):
             content += f"MAKEOPTS={data["makeopts"]}\n"
