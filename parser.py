@@ -83,15 +83,16 @@ for line in FILE_CONTENT:
 
 # Generation
 output=pathlib.Path("./ports/")
-output.mkdir(exist_ok=True, parents=True)
 
-option = input("==> would you like to remove the older files? (y/N)")
-if option == "y" or option == "yes":
-    shutil.rmtree(output)
-    output.mkdir(exist_ok=True, parents=True)
-    print("==> removed, moving on to the generation")
-else:
-    print("==> aborted")
+if output.exists():
+    option = input("==> would you like to remove the older files? (y/N)")
+    if option == "y" or option == "yes":
+        shutil.rmtree(output)
+        print("==> removed, moving on to the generation")
+    else:
+        print("==> aborted")
+        
+output.mkdir(exist_ok=True, parents=True)
 
 for name, data in ports.items():
     portdir = output / pathlib.Path(name)
@@ -116,8 +117,8 @@ for name, data in ports.items():
             content += "\n    "
             content += "\n    ".join(data["depends"].split(" "))
         
-        if data.get("build") == "python":
-            content += "\n    dev/python"
+        if data.get("build"):
+            content += f"\n    dev/{data["build"]}"
         
         file.write(content)
     
@@ -127,7 +128,7 @@ for name, data in ports.items():
         if data.get("makeopts"):
             content += f"MAKEOPTS={data["makeopts"]}\n"
             content += "set -f\n"
-            content += "set -- $MAKEOPTS"
+            content += "set -- $MAKEOPTS\n\n"
         
         content += CONFFILE
 
