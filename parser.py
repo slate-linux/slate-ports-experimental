@@ -130,3 +130,5 @@ for name, data in ports.items():
             content += "set -- $MAKEOPTS"
         
         content += CONFFILE
+
+        file.write(content)
