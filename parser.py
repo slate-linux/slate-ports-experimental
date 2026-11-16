@@ -3,6 +3,43 @@ import shutil
 import pathlib
 import subprocess
 
+# Templates
+HEADER = """#!/bin/sh
+set -eu
+
+BUILD="${{PORTS_DIR%/:-/usr/ports}}/{port}/build"
+mkdir -p $BUILD
+cd $BUILD
+
+if [ ! -f package.tar.gz ] || [ ! "$HASH" = "$(sha256sum package.tar.gz | cut -d' ' -f1)" ]; then
+    curl -fL -o package.tar.gz {url}
+fi
+tar -xf package.tar.gz
+cd $(tar --exclude="*/*" -tf package.tar.gz")
+
+"""
+
+CONFFILE = """if [ -f configure ]; then
+    ./configure --prefix="/usr"
+fi
+
+"""
+
+BUILD = {
+
+"make": """
+""",
+"cmake": """
+""",
+"meson": """
+""",
+"python": """
+""",
+"gnumake": """
+""",
+
+}
+
 # Functions
 def get_hash(link: str):
     result = subprocess.run(
@@ -63,12 +100,13 @@ for name, data in ports.items():
     with open(portdir / "meta.conf", "w") as file:
         content = ""
         if not data.get("version"):
-            raise ValueError(f"Version not given for '{name}'")
-
+            print(f"==> error: version not given for '{name}', skipping")
+            continue
         content += f"VERSION={data["version"]}\n"
 
         if not data.get("tarball"):
-            raise ValueError(f"Archive (tarball) not given for '{name}'")
+            print(f"==> error: archive (tarball) not given for '{name}', skipping")
+            continue
 
         print(f"==> generating hash for '{name}', this might take a while")
         content += f"HASH={get_hash(data["tarball"])}\n"
@@ -78,4 +116,17 @@ for name, data in ports.items():
             content += "\n    "
             content += "\n    ".join(data["depends"].split(" "))
         
+        if data.get("build") == "python":
+            content += "\n    dev/python"
+        
         file.write(content)
+    
+    with open(portdir / "port.sh", "w") as file:
+        content = HEADER.format(port=name, url=data["tarball"])
+        
+        if data.get("makeopts"):
+            content += f"MAKEOPTS={data["makeopts"]}\n"
+            content += "set -f\n"
+            content += "set -- $MAKEOPTS"
+        
+        content += CONFFILE
