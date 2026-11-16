@@ -14,7 +14,7 @@ BUILD="${{PORTS_DIR%/:-/usr/ports}}/{port}/build"
 mkdir -p $BUILD
 cd $BUILD
 
-if [ ! -f package.tar.gz ] || [ ! "$HASH" = "$({hasing}sum package.tar.gz | cut -d' ' -f1)" ]; then
+if [ ! -f package.tar.gz ] || [ ! "$HASH" = "$({hashing}sum package.tar.gz | cut -d' ' -f1)" ]; then
     curl -fL -o package.tar.gz {url}
 fi
 tar -xf package.tar.gz
@@ -62,8 +62,10 @@ with open("./ports.conf", "r") as file:
 ports = {}
 current_port = ""
 for line in FILE_CONTENT:
+    commentmatch = re.search(r"\s?[;#]", line)
+    if commentmatch: line = line[:commentmatch.start()]
+
     if not line.strip(): continue
-    if line.startswith("#") or line.startswith(";"): continue
 
     if re.match(r"\[.+\]", line): # I hate regex sometimes
         current_port = line[1:-2].strip()
