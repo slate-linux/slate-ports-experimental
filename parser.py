@@ -87,7 +87,7 @@ for line in FILE_CONTENT:
     line = line.strip()
     if not line: continue
 
-    if re.match(r"\[.+\]", line): # I hate regex sometimes
+    if line.startswith("[") and line.endswith("]"):
         current_port = line[1:-1]
         continue
 
