@@ -1,4 +1,6 @@
+#!/bin/python3
 import re
+import sys
 import shutil
 import pathlib
 import subprocess
@@ -54,9 +56,26 @@ def get_hash(link: str):
 
     return result.stdout[:-1]
 
-# Reading file
-with open("./ports.conf", "r") as file:
+# Initializing process
+if len(sys.argv) == 1:
+    print(sys.argv[0], "<ports-file> <output-directory>")
+    exit(1)
+
+PORTFILE = sys.argv[1] if len(sys.argv) > 1 else "./main.slateports"
+output = pathlib.Path(sys.argv[2] if len(sys.argv) > 2 else "./ports/")
+
+with open(PORTFILE, "r") as file:
     FILE_CONTENT = file.readlines()
+
+if output.exists():
+    option = input("==> would you like to remove the older files? (y/N)")
+    if option == "y" or option == "yes":
+        shutil.rmtree(output)
+        print("==> removed, moving on to the generation")
+    else:
+        print("==> aborted")
+        
+output.mkdir(exist_ok=True, parents=True)
 
 # Iteration
 ports = {}
@@ -87,18 +106,6 @@ for line in FILE_CONTENT:
         ports[current_port] = { k:v }
 
 # Generation
-output=pathlib.Path("./ports/")
-
-if output.exists():
-    option = input("==> would you like to remove the older files? (y/N)")
-    if option == "y" or option == "yes":
-        shutil.rmtree(output)
-        print("==> removed, moving on to the generation")
-    else:
-        print("==> aborted")
-        
-output.mkdir(exist_ok=True, parents=True)
-
 for name, data in ports.items():
     portdir = output / pathlib.Path(name)
     portdir.mkdir(exist_ok=True, parents=True)
