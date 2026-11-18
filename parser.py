@@ -109,25 +109,38 @@ for name, data in ports.items():
             print(f"==> error: version not given for '{name}', skipping")
             continue
         content += f"VERSION={data["version"]}\n"
-
-        if not data.get("tarball"):
-            print(f"==> error: archive (tarball) not given for '{name}', skipping")
-            continue
-
-        print(f"==> generating hash for '{name}', this might take a while")
-        content += f"HASH={get_hash(data["tarball"])}\n"
-
-        content += "DEPENDS="
-        if data.get("depends"):
-            content += "\n    "
-            content += "\n    ".join(data["depends"].split(" "))
         
-        if data.get("build"):
-            content += f"\n    dev/{data["build"]}"
-        
+        if data.get("meta"):
+            if not data.get("depends"):
+                print(f"==> error: cannot generate meta package '{name}' without dependencies")
+                continue
+            content += "DEPENDS="
+            if data.get("depends"):
+                content += "\n    "
+                content += "\n    ".join(data["depends"].split(" "))
+        else:
+            if not data.get("tarball"):
+                print(f"==> error: archive (tarball) not given for '{name}', skipping")
+                continue
+
+            print(f"==> generating hash for '{name}', this might take a while")
+            content += f"HASH={get_hash(data["tarball"])}\n"
+
+            content += "DEPENDS="
+            if data.get("depends"):
+                content += "\n    "
+                content += "\n    ".join(data["depends"].split(" "))
+            
+            if data.get("build"):
+                content += f"\n    dev/{data["build"]}"
+            
         file.write(content)
     
     with open(portdir / "port.sh", "w") as file:
+        if data.get("meta"):
+            file.write("")
+            continue
+
         content = HEADER.format(hashing=HASHING, port=name, url=data["tarball"])
         
         if data.get("makeopts"):
