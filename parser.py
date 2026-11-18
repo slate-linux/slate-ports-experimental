@@ -84,10 +84,11 @@ for line in FILE_CONTENT:
     commentmatch = re.search(r"\s?[;#]", line)
     if commentmatch: line = line[:commentmatch.start()]
 
-    if not line.strip(): continue
+    line = line.strip()
+    if not line: continue
 
     if re.match(r"\[.+\]", line): # I hate regex sometimes
-        current_port = line[1:-2].strip()
+        current_port = line[1:-1]
         continue
 
     options = line.split("=", 1)
